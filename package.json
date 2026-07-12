@@ -1,0 +1,32 @@
+{
+  "name": "defender-game",
+  "version": "1.0.0",
+  "description": "\"Browser based game\"",
+  "keywords": [
+    "game"
+  ],
+  "homepage": "https://github.com/znst5/defender-name#readme",
+  "bugs": {
+    "url": "https://github.com/znst5/defender-name/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/znst5/defender-name.git"
+  },
+  "license": "ISC",
+  "author": "znst5",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^8.0.4",
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2"
+  },
+  "dependencies": {
+    "core-js": "^3.49.0"
+  }
+}
