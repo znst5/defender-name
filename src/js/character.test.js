@@ -92,5 +92,46 @@ describe('Тестирование иерархии классов', () => {
         defence: 10
       });
     });
+
+    describe('Тестирование метода levelUp', () => {
+      test('Положительный тест: повышение уровня и показателей', () => {
+        const hero = new Bowman('Вася');
+        hero.health = 50;
+
+        hero.levelUp();
+
+        expect(hero.level).toBeCloseTo(2);
+        expect(hero.attack).toBeCloseTo(30);
+        expect(hero.defence).toBeCloseTo(30);
+        expect(hero.health).toBeCloseTo(100);
+      });
+
+      test('Ошибка: персонаж мертв', () => {
+        const hero = new Bowman('Вася');
+        hero.health = 0;
+
+        expect(() => hero.levelUp()).toThrow('Нельзя повысить уровень умершего');
+      });
+    });
+
+    describe('Тестирование метода damage', () => {
+      test('Положительный тест: корректное уменьшение здоровья с учетом защиты', () => {
+        const hero = new Bowman('Вася');
+
+        hero.damage(40);
+
+        expect(hero.health).toBeCloseTo(70);
+
+      });
+
+      test('Здоровье не меньше 0', () => {
+        const hero = new Bowman('Вася');
+
+        hero.damage(1000);
+
+        expect(hero.health).toBeCloseTo(0);
+
+      });
+    });
   });
 });
