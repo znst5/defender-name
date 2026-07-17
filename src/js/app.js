@@ -2,8 +2,12 @@ import Game, { GameSavingData, readGameSaving as loadGame, writeGameSaving as sa
 console.log('app worked');
 
 const game = new Game();
+
+game.registerPlayer('Alex-99', 'Legolas');
+
 new GameSavingData();
-game.start();
+
+game.start('Bowman');
 
 loadGame();
 saveGame();
