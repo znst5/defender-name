@@ -7,7 +7,7 @@ export default [
   {
     languageOptions: {
       globals: {
-        ...globals.brower,
+        ...globals.browser,
         ...globals.node,
         ...globals.jest
       }
